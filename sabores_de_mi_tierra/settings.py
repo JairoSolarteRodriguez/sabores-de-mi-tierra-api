@@ -94,11 +94,11 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('POSTGRESQL_NAME'),
-        'USER': config('POSTGRESQL_USER'),
-        'PASSWORD': config('POSTGRESQL_PASS'),
-        'HOST': config('POSTGRESQL_HOST'),
-        'PORT': config('POSTGRESQL_PORT'),
+        'NAME': env('POSTGRESQL_NAME'),
+        'USER': env('POSTGRESQL_USER'),
+        'PASSWORD': env('POSTGRESQL_PASS'),
+        'HOST': env('POSTGRESQL_HOST'),
+        'PORT': env('POSTGRESQL_PORT'),
     }
 
     # 'default': {
