@@ -55,14 +55,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """ return user string """
         return self.email
-
-
-class UserProfile(models.Model):
-    """ Model for user profile"""
-
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
-    profile_stars = models.IntegerField(blank=False)
-    profile_name = models.CharField(max_length=50, blank=False)
-    profile_last_name = models.CharField(max_length=50,  blank=False)
-    profile_birth = models.DateField(auto_now=False, blank=False)
-    profile_photo = models.FileField(upload_to ='uploads/')
