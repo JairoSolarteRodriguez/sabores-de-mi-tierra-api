@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
-import environ
-env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,19 +89,19 @@ WSGI_APPLICATION = 'sabores_de_mi_tierra.wsgi.application'
 
 
 DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-    
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('POSTGRESQL_NAME'),
-        'USER': env('POSTGRESQL_USER'),
-        'PASSWORD': env('POSTGRESQL_PASS'),
-        'HOST': env('POSTGRESQL_HOST'),
-        'PORT': env('POSTGRESQL_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'NAME': env('POSTGRESQL_NAME'),
+    #    'USER': env('POSTGRESQL_USER'),
+    #    'PASSWORD': env('POSTGRESQL_PASS'),
+    #    'HOST': env('POSTGRESQL_HOST'),
+    #    'PORT': env('POSTGRESQL_PORT'),
+    #}
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
