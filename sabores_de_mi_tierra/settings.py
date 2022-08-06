@@ -87,19 +87,19 @@ WSGI_APPLICATION = 'sabores_de_mi_tierra.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #}
     
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': config('POSTGRESQL_NAME'),
-    #     'USER': config('POSTGRESQL_USER'),
-    #     'PASSWORD': config('POSTGRESQL_PASS'),
-    #     'HOST': config('POSTGRESQL_HOST'),
-    #     'PORT': config('POSTGRESQL_PORT'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('POSTGRESQL_NAME'),
+        'USER': config('POSTGRESQL_USER'),
+        'PASSWORD': config('POSTGRESQL_PASS'),
+        'HOST': config('POSTGRESQL_HOST'),
+        'PORT': config('POSTGRESQL_PORT'),
+    }
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
