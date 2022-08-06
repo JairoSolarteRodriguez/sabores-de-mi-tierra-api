@@ -10,6 +10,6 @@ API_KEY = env('API_KEY')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(f'users/{API_KEY}', include('users_app.urls')),
+    path(f'users/{API_KEY}/', include('users_app.urls')),
     path('api/', include('api.urls')),
 ]
