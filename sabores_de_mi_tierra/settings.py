@@ -12,19 +12,20 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1231212dasdasd'
+SECRET_KEY = 'abcdefghijklmnopqrstvwxyz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # De string a booleano
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
@@ -92,14 +93,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
     
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': config('POSTGRESQL_NAME'),
-    #     'USER': config('POSTGRESQL_USER'),
-    #     'PASSWORD': config('POSTGRESQL_PASS'),
-    #     'HOST': config('POSTGRESQL_HOST'),
-    #     'PORT': config('POSTGRESQL_PORT'),
-    # }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'NAME': env('POSTGRESQL_NAME'),
+    #    'USER': env('POSTGRESQL_USER'),
+    #    'PASSWORD': env('POSTGRESQL_PASS'),
+    #    'HOST': env('POSTGRESQL_HOST'),
+    #    'PORT': env('POSTGRESQL_PORT'),
+    #}
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
