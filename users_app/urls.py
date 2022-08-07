@@ -13,6 +13,7 @@ router.register('measure', public_views.MeasureViewSet)
 router.register('difficulty', public_views.DifficultyViewSet)
 
 # User api
-router.register('users', user_views.UserProfileViewSet)
+router.register('users', user_views.UserViewSet)
+router.register('profile', user_views.UserProfileViewSet)
 
 urlpatterns = router.urls

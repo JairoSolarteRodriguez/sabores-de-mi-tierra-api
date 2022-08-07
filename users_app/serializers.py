@@ -32,3 +32,28 @@ class UserProfileSerializer(serializers.ModelSerializer):
             instance.set_password(password)
 
         return super().update(instance, validate_data)
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    """ serializer from profile """
+
+    class Meta:
+        model = models.Profile
+        fields = (
+            'id',
+            'user_id',
+            'profile_stars',
+            'profile_name',
+            'profile_last_name',
+            'profile_date_birth',
+            'profile_photo'
+        )
+        exta_kwargs = {
+            'id': {'read_only': True},
+            'user_id':{'read_only': True},
+            'profile_stars':{'read_only': True},
+            'profile_name':{'read_only': True},
+            'profile_last_name':{'read_only': True},
+            'profile_date_birth':{'read_only': True},
+            'profile_photo':{'read_only': True}
+        }

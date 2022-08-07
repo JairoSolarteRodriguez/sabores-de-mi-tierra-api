@@ -1,7 +1,9 @@
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+from django.conf import settings
 
 
 class UserManager(BaseUserManager):
@@ -55,3 +57,19 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """ return user string """
         return self.email
+
+
+class Profile(models.Model):
+    """ User profilee """
+    user_id = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    profile_stars = models.IntegerField()
+    profile_name = models.CharField(max_length=50)
+    profile_last_name = models.CharField(max_length=50)
+    profile_date_birth = models.DateField()
+    profile_photo = models.ImageField(upload_to='profile_photos')
+
+    def __str__(self):
+        return self.profile_name
